@@ -7,13 +7,13 @@ const DUMMY_EXPENSES = [
       id: 'e1',
       description: 'A pair of pants',
       amount: 34.33,
-      date: new Date('2025-10-05')
+      date: new Date('2025-05-10')
     },
     {
       id: 'e2',
       description: 'A pair of shorts',
       amount: 33.33,
-      date: new Date('2025--03')
+      date: new Date('2025-12-03')
     },
     {
       id: 'e3',
@@ -67,7 +67,7 @@ const DUMMY_EXPENSES = [
   
   
 
-
+// we create the expenses context with the data model of the arrays and functions it will have 
 export const ExpensesContext = createContext({
     expenses: [],
     addExpense: ({description, amount, date}) => {},
@@ -107,7 +107,7 @@ const ExpensesContextProvider = ({children}) => {
 
     const addExpense = (expenseData) => {
         dispatch({type: 'ADD', payload: expenseData });
-    } 
+    }
 
     const deleteExpense = (id) => {
         dispatch({type: 'DELETE', payload: id });
@@ -120,9 +120,9 @@ const ExpensesContextProvider = ({children}) => {
 
     const value = {
         expenses: expensesState,
-        addExpense: addExpense,
-        deleteExpense: deleteExpense,
-        updateExpense: updateExpense,
+        addExpense,
+        deleteExpense,
+        updateExpense,
     }
 
 
