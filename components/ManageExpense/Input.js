@@ -14,7 +14,7 @@ const Input = ({ label, style, textInputConfig, invalid }) => {
     if (invalid) {
         inputStyles.push(styles.invalidInput);
     }
-
+    
   return (
     <View style={[styles.container, style]}>
       <Text style={[styles.label, invalid && styles.invalidLabel]}>{label}</Text>
